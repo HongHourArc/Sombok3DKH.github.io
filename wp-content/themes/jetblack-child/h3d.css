@@ -1,0 +1,108 @@
+:root {
+  --primary-color: #2b3636;
+  --secondary-color: rgb(250, 204, 0);
+  --secondary-color-hover: rgb(255, 219, 58);
+  --warning-color: rgb(233, 150, 27);
+  --warning-color-hover: rgb(252, 182, 77);
+}
+body {
+  background-color: rgb(32, 32, 32);
+}
+body, head, input, select, optgroup, textarea {
+    color: #ffff1b; /* Sets the text color to a shade of gray (#797978) */
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px; /* Sets the font size to 18 pixels */
+    font-size: 1rem; /* Overrides the font size to 1.6 times the default font size (assuming the default font size is 16px) */
+    line-height: 1.5; /* Sets the line height to 1.5 times the font size */
+}
+
+a:hover,a:focus,a:active {
+  color: rgb(241, 13, 108);
+}
+.h3d-pre-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: black;
+  border-radius: 25px;
+}
+.h3d-pre-header > .container {
+  display: flex;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  column-gap: 10px;
+  margin-left: 25px;
+}
+.social-media {
+  display: flex;
+  margin-right: 15px;
+  column-gap: 15px;
+
+}
+.fa-facebook-f {
+  font-size: 20px;
+  color: #f8f8f8;
+}
+.fa-tiktok {
+  font-size: 20px;
+  color: #f8f8f8;
+}
+.h3d-pre-header {
+  font-size: 15px;
+  outline: none;
+}
+
+.h3d-header {
+  padding: 10px 0;
+}
+
+.h3d-header > .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.h3d-input-wrapper {
+  position: relative;
+}
+.h3d-input-wrapper > .h3d-btn-none-style {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  font-size: 18px;
+  margin-top: 0;
+  padding: 0 15px;
+}
+
+input.sm {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.h3d-layout-box-left {
+  flex: 1;
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 0%;
+  padding-right: 20px;
+}
+.list-h3d-categories {
+  list-style: none;
+  padding: 0px;
+  margin: 0;
+}
+
+.site-footer {
+  margin-bottom: auto;
+}
+
+.site-generator {
+  background-color: black;
+  padding: 15px;
+}
+
+.copyright {
+  font-size: 14px;
+  display: flex;
+  justify-content: space-between;
+}
