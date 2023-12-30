@@ -189,70 +189,36 @@ const assetsData = [
   },
 ];
 
-const productContainer = document.querySelector(".MuiGridlist-root");
-const linksEl = document.querySelectorAll(".sidebar a"); // Changed selector to target by class name
-const btnEl = document.querySelector(".submit"); // Changed the selector for the button
-const input = document.querySelector(".search-input"); // Changed the selector for the input
+const btnEl = document.querySelector(".submit");
+const inputEl = document.querySelector(".search-input");
 
-// Display all dynamic data
-window.addEventListener("DOMContentLoaded", () => {
-  displayAssets(assetsData);
-  //console.log(displayData);
-
-  // Your existing code for linksEl remains the same before this point
-
-  linksEl.forEach((link) => {
-    link.addEventListener("click", (e) => {
-      const category = e.target.dataset.h3d;
-      console.log("Clicked category:", category); // Check the value of the extracted category
-
-      const assetsCategory = assetsData.filter(
-        (data) => data.category === category
-      );
-      console.log("Filtered assets:", assetsCategory); // Check the filtered assets
-
-      if (category === "AllAssets") {
-        displayAssets(assetsData);
-      } else {
-        displayAssets(assetsCategory);
-      }
-    });
-  });
-
-  // Event listener for button click
-  btnEl.addEventListener("click", () => {
-    // Handle button click event here
-    // For example, perform a search based on the input value
-    const searchTerm = input.value.trim();
-    const filteredAssets = assetsData.filter((data) =>
-      data.title.toLowerCase().includes(searchTerm.toLowerCase())
-    );
-    displayAssets(filteredAssets);
-  });
-});
-
-// Rest of your code remains the same
-
+// Function to display assets based on input array
 function displayAssets(assets) {
-  let displayData = assets.map(function (cat_items) {
-    return `<li class="Card-template"> 
+  const productContainer = $(".MuiGridlist-root");
+
+  if (!productContainer.length) {
+    console.error("Product container not found");
+    return;
+  }
+
+  const displayData = assets
+    .map((asset) => {
+      return `<li class="Card-template"> 
             <div class="card-header">
-                <img src="${cat_items.img}" alt="">
+                <img src="${asset.img}" alt="">
             </div>
             <div class="card-body">
                 <div class="card-content">
-                    <h2>${cat_items.title}</h2>
+                    <h2>${asset.title}</h2>
                     <div class="card-size">
-                        <p>Size: ${cat_items.size}</p>
+                        <p>Size: ${asset.size}</p>
                     </div>
                     <div class="card-uploadname">
-                        <p>Upload by: ${cat_items.upload}</p>
+                        <p>Upload by: ${asset.upload}</p>
                     </div>
-                    
                 </div>
                 <div class="card-footer">
-                    <div>
-                    </div>
+                    <div></div>
                     <div class="card-download">
                         <p>Read more</p>
                         <span class="material-icons-sharp">
@@ -262,10 +228,45 @@ function displayAssets(assets) {
                 </div>
             </div>
         </li>`;
-  });
-  displayData = displayData.join("");
-  productContainer.innerHTML = displayData;
+    })
+    .join("");
+
+  productContainer.html(displayData);
 }
+
+// Function to filter assets based on category
+function filterAssets(category) {
+  let filteredAssets = assetsData;
+
+  if (category !== "AllAssets") {
+    filteredAssets = assetsData.filter((data) => data.category === category);
+  }
+
+  displayAssets(filteredAssets);
+}
+
+// Function to handle search button click
+function handleSearch() {
+  const searchTerm = $(".search-input").val().trim().toLowerCase();
+
+  const filteredAssets = assetsData.filter((data) =>
+    data.title.toLowerCase().includes(searchTerm)
+  );
+
+  displayAssets(filteredAssets);
+}
+
+// jQuery document ready function
+$(document).ready(function () {
+  displayAssets(assetsData);
+
+  $(".sidebar a").on("click", function (e) {
+    const category = $(this).data("h3d");
+    filterAssets(category);
+  });
+
+  $(".submit").on("click", handleSearch);
+});
 
 // Search
 btnEl.addEventListener("click", (e) => {
