@@ -306,10 +306,11 @@ main .headtoolbar {
   }
   .search i {
     left: 12px;
-    font-size: 20px;
+    font-size: 15px;
   }
   .search input {
     padding: 0 112px 0 50px;
+    font-size: 15px;
   }
   .search button {
     right: 12px;
@@ -891,7 +892,7 @@ main .load-more:hover span {
 }
 /* media Screen  768*/
 
-@media screen and (min-width: 767px) {
+@media screen and (max-width: 767px) {
   .container {
     margin: 0 11px 11px 11px;
     width: 100%;
