@@ -64,9 +64,10 @@ const menuBtn = document.getElementById("menu-btn");
 const closeBtn = document.getElementById("close-btn");
 
 const maxWidth = 3900; // Maximum width for the media screen to show the side menu
+const mediaQuery = window.matchMedia("(max-width: 768px)");
 
 const displaySideMenu = () => {
-  if (window.innerWidth <= maxWidth) {
+  if (window.innerWidth <= maxWidth && !mediaQuery.matches) {
     sideMenu.style.display = "block";
   } else {
     sideMenu.style.display = "none";
@@ -74,7 +75,7 @@ const displaySideMenu = () => {
 };
 
 menuBtn.addEventListener("click", () => {
-  displaySideMenu();
+  sideMenu.style.display = "block"; // Show the side menu on button click
 });
 
 closeBtn.addEventListener("click", () => {
@@ -86,3 +87,33 @@ displaySideMenu();
 
 // Listen for window resize events to adjust the display of the side menu
 window.addEventListener("resize", displaySideMenu);
+
+////// Back-to-top /////--
+
+(function () {
+  const backToTopButton = document.querySelector(".btn-back-top");
+  const BODY_CSS_CLASS = "is-scrolling";
+
+  backToTopButton.addEventListener("click", () => {
+    window.scroll({
+      top: 0,
+      left: 0,
+      behavior: "smooth",
+    });
+  });
+
+  function handleScroll() {
+    const scrollPosition =
+      window.scrollY ||
+      document.documentElement.scrollTop ||
+      document.body.scrollTop;
+
+    if (scrollPosition > 100) {
+      document.body.classList.add(BODY_CSS_CLASS);
+    } else {
+      document.body.classList.remove(BODY_CSS_CLASS);
+    }
+  }
+
+  window.addEventListener("scroll", handleScroll);
+})();

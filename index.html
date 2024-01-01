@@ -15,7 +15,6 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
     <link rel="stylesheet" href="h3d-style.css">
     <script src="https://kit.fontawesome.com/7ff1eae6e7.js" crossorigin="anonymous"></script>
-    <script defer src="activePage.js"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 
 <body>
@@ -25,7 +24,7 @@
         <aside>
             <div class="toggle">
                 <div class="logo">
-                    <a href="H3D-Architects-Leaning.html"> <img src="wp-content/themes/Logo/H3d copy.png"> 
+                    <a href="H3D-Architects-Leaning.html"> <img src="wp-content/themes/Logo/SVG-LOGO.svg"> 
                     </a>
                     
                 </div>
@@ -37,6 +36,12 @@
             </div>
 
             <div class="sidebar">
+                <a href="#" data-h3d="AllAssets">
+                    <span class="material-icons-sharp">
+                        home
+                    </span>
+                    <h3>Home</h3>
+                </a>
                 <a href="#" data-h3d="H3DLessons">
                     <span class="material-icons-sharp" >
                         menu_book
@@ -55,12 +60,6 @@
                     </span>
                     <h3>H-3D Premiums</h3>
                 </a>
-                <a href="#" data-h3d="AllAssets">
-                    <span class="material-icons-sharp">
-                        dashboard
-                    </span>
-                    <h3>All Assets</h3>
-                </a>
                 <a href="#" data-h3d="Free">
                     <span class="material-icons-sharp">
                         favorite
@@ -69,14 +68,14 @@
                 </a>
                 <a href="#" data-h3d="Tree">
                     <span class="material-icons-sharp">
-                        forest
+                        park
                     </span>
                     <h3>Tree</h3>
                     <span class="message-count">27</span>
                 </a>
                 <a href="#" data-h3d="Furniture">
                     <span class="material-icons-sharp">
-                        chair
+                        bed
                     </span>
                     <h3>Furniture</h3>
                 </a>
@@ -88,7 +87,7 @@
                 </a>
                 <a href="#" data-h3d="Decoration">
                     <span class="material-icons-sharp">
-                        living
+                        yard
                     </span>
                     <h3>Decoration</h3>
                 </a>
@@ -117,19 +116,6 @@
 
             <!--Header Section-->
             <div class="headtoolbar">
-                <div class="search-bar">
-                  <form id="h3d-search">
-                    <button class="submit">
-                        <a href="#">
-                            <span class="material-icons-sharp">
-                                search
-                                </span>
-                        </a>
-                    </button>
-                    <input class="search-input" type="search" name="keyword" placeholder="Search H3D" value>
-                  </form>
-
-                </div>
 
                 <div class="menu" id="menu-btn">
                     <span class="material-icons-sharp">
@@ -137,15 +123,19 @@
                     </span>
                 </div>
 
-                <div class="social-media">
-                    <a href="https://web.facebook.com/hlearningCambodia/" id="h3dfacebook">
-                        <i class="fa-brands fa-facebook-f"></i>
-                    </a>
-                    <a href="https://www.tiktok.com/@h3dlearningcambodia?_t=8hk5ZF14KUk&_r=1" id="h3dtiktok">
-                        <i class="fa-brands fa-tiktok"></i>
-                    </a>
+                <div class="search">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <form acton="#">
+                     <input 
+                     type="search" 
+                     placeholder="Search H3D" 
+                     class="form_control"
+                     />
+                     <button type="button" class="btn_search">
+                        search
+                     </button>
+                    </form>
                 </div>
-
 
                 <!-- End of Header Section -->
 
@@ -156,6 +146,7 @@
                 <div class="homepage-header">
                     <a href="#"> <img src="wp-content/uploads/Homepage/Header adv/DF.jpg" alt=""></a>  
                 </div>
+                
                 <ul class="MuiGridlist-root">
                     <!--<li class="Card-template"> 
                         <div class="card-header">
@@ -627,10 +618,16 @@
 
         </main>
     </div>
+
+     <!-- Back To Top Button -->
+    <button class="btn-back-top">
+        <span class="material-icons-sharp">
+            expand_less
+        </span>
+    </button>
 <!-- Footer -->
     <footer class="footer" id="footer">
         <div class="footer_addr">
-
             <div class="footer__logo">
                 <div class="logo">
                     <a href="H3D-Architects-Leaning.html"> <img src="wp-content/themes/Logo/H3d copy.png"> 
@@ -640,16 +637,14 @@
               <h2>Contact</h2>
         
               <address>
-               <p>5534 Somewhere In. The World 22193-10212 </p>
+               <p>Tell: 0963672044</p>
                <a class="footer__btn" href="mailto:example@gmail.com">Email Us</a>
               </address>
             </div>
-      
             <div class="footer__nav">
                  <h2> About us</h2>
                  <p> All resources of this website are uploaded freely by users. They are only used for scientific research and teaching purposes. Therefore, all resources are not used for commercial purposes, otherwise you will bear legal responsibilities…  Read more</p>
             </div>
-    
             <div class="legal">
                  <div>
                      <h1>Donat us</h1>
@@ -657,6 +652,14 @@
                  <div>
                      <p>&copy; 2024 SALA MODELING. All rights reserved.</p>
                  </div>
+            </div>
+            <div class="social-media">
+                <a href="https://web.facebook.com/hlearningCambodia/" id="h3dfacebook">
+                    <i class="fa-brands fa-facebook-f"></i>
+                </a>
+                <a href="https://www.tiktok.com/@h3dlearningcambodia?_t=8hk5ZF14KUk&_r=1" id="h3dtiktok">
+                    <i class="fa-brands fa-tiktok"></i>
+                </a>
             </div>
 
         </div>
@@ -672,6 +675,7 @@
         </div>
     </footer>
     <script src="Data-assets.js"></script>
+    <script defer src="activePage.js"></script>
 </body>
 
 

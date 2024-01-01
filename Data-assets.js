@@ -10,6 +10,7 @@ const assetsData = [
     upload: "Hour",
     img: "./wp-content/uploads/Lesson/HOUR 3a.jpg",
     price: "Free",
+    icons: "menu_book",
   },
 
   {
@@ -21,6 +22,7 @@ const assetsData = [
     upload: "Hour",
     img: "./wp-content/uploads/Lesson/HOUR 4a.jpg",
     price: "Free",
+    icons: "menu_book",
   },
 
   {
@@ -32,6 +34,7 @@ const assetsData = [
     upload: "Hour",
     img: "./wp-content/uploads/Lesson/HOUR 5a.jpg",
     price: "Free",
+    icons: "menu_book",
   },
 
   {
@@ -43,6 +46,7 @@ const assetsData = [
     upload: "Hour",
     img: "./wp-content/uploads/Lesson/HOUR 6a.jpg",
     price: "Free",
+    icons: "menu_book",
   },
 
   {
@@ -54,6 +58,7 @@ const assetsData = [
     upload: "Hour",
     img: "./wp-content/uploads/Lesson/HOUR 7a.jpg",
     price: "Free",
+    icons: "dmenu_book",
   },
 
   {
@@ -65,6 +70,7 @@ const assetsData = [
     upload: "Hour",
     img: "./wp-content/uploads/Premiums/Pre.jpg",
     price: "Free",
+    icons: "diamond",
   },
 
   {
@@ -76,6 +82,7 @@ const assetsData = [
     upload: "Hour",
     img: "./wp-content/uploads/Premiums/Pre1.jpg",
     price: "Free",
+    icons: "diamond",
   },
 
   {
@@ -87,6 +94,7 @@ const assetsData = [
     upload: "Hour",
     img: "./wp-content/uploads/Premiums/Pre2.jpg",
     price: "Free",
+    icons: "diamond",
   },
 
   {
@@ -98,6 +106,7 @@ const assetsData = [
     upload: "Hour",
     img: "./wp-content/uploads/Premiums/Pre3.jpg",
     price: "Free",
+    icons: "diamond",
   },
 
   {
@@ -109,6 +118,7 @@ const assetsData = [
     upload: "Hour",
     img: "./wp-content/uploads/Premiums/Pre4.jpg",
     price: "Free",
+    icons: "diamond",
   },
 
   {
@@ -120,6 +130,7 @@ const assetsData = [
     upload: "Hour",
     img: "./wp-content/uploads/Premiums/Pre5.jpg",
     price: "Free",
+    icons: "diamond",
   },
 
   {
@@ -131,6 +142,7 @@ const assetsData = [
     upload: "Hour",
     img: "./wp-content/uploads/Premiums/Pre6.jpg",
     price: "Free",
+    icons: "diamond",
   },
 
   {
@@ -142,6 +154,7 @@ const assetsData = [
     upload: "Hour",
     img: "./wp-content/uploads/Premiums/Pre7.jpg",
     price: "Free",
+    icons: "diamond",
   },
 
   {
@@ -153,6 +166,7 @@ const assetsData = [
     upload: "Hour",
     img: "./wp-content/uploads/Students/Stu.jpg",
     price: "Free",
+    icons: "diversity_1",
   },
 
   {
@@ -164,6 +178,7 @@ const assetsData = [
     upload: "Hour",
     img: "./wp-content/uploads/Students/Stu1.jpg",
     price: "Free",
+    icons: "diversity_1",
   },
 
   {
@@ -175,6 +190,7 @@ const assetsData = [
     upload: "Hour",
     img: "./wp-content/uploads/Students/Stu2.jpg",
     price: "Free",
+    icons: "diversity_1",
   },
 
   {
@@ -186,11 +202,36 @@ const assetsData = [
     upload: "Hour",
     img: "./wp-content/uploads/Students/Stu3.jpg",
     price: "Free",
+    icons: "diversity_1",
+  },
+
+  {
+    id: 18,
+    title: "Scene Interior 01",
+    category: "Free",
+    size: "235mb",
+    releaseDate: "Dec 19 2018",
+    upload: "Hour",
+    img: "./wp-content/uploads/Students/Stu3.jpg",
+    price: "Free",
+    icons: "none",
+  },
+
+  {
+    id: 19,
+    title: "Scene Interior 01",
+    category: "Tree",
+    size: "235mb",
+    releaseDate: "Dec 19 2018",
+    upload: "Hour",
+    img: "./wp-content/uploads/Students/Stu3.jpg",
+    price: "Free",
+    icons: "none",
   },
 ];
 
-const btnEl = document.querySelector(".submit");
-const inputEl = document.querySelector(".search-input");
+const btnEl = document.querySelector(".btn_search");
+const inputEl = document.querySelector(".form_control");
 
 // Function to display assets based on input array
 function displayAssets(assets) {
@@ -206,6 +247,9 @@ function displayAssets(assets) {
       return `<li class="Card-template"> 
             <div class="card-header">
                 <img src="${asset.img}" alt="">
+                <span class="material-icons-sharp">
+                                ${asset.icons}
+                            </span>
             </div>
             <div class="card-body">
                 <div class="card-content">
@@ -245,17 +289,6 @@ function filterAssets(category) {
   displayAssets(filteredAssets);
 }
 
-// Function to handle search button click
-function handleSearch() {
-  const searchTerm = $(".search-input").val().trim().toLowerCase();
-
-  const filteredAssets = assetsData.filter((data) =>
-    data.title.toLowerCase().includes(searchTerm)
-  );
-
-  displayAssets(filteredAssets);
-}
-
 // jQuery document ready function
 $(document).ready(function () {
   displayAssets(assetsData);
@@ -268,28 +301,64 @@ $(document).ready(function () {
   $(".submit").on("click", handleSearch);
 });
 
-// Search
+//Search
 btnEl.addEventListener("click", (e) => {
-  let searchValue = inputEl.value.trim(); // Trim to remove leading/trailing spaces
+  e.preventDefault(); // Prevent the default form submission behavior if btnEl is inside a form
+
+  let searchValue = inputEl.value.trim().toLowerCase(); // Trim and convert input to lowercase for case-insensitive comparison
 
   if (searchValue !== "") {
-    let searchCategory = assetsData.filter(function (data) {
-      // Check for matching title or category using lowercase for case-insensitive search
+    let searchResults = assetsData.filter(function (data) {
+      // Check if title or category contains the searchValue
       return (
-        data.title.toLowerCase().includes(searchValue.toLowerCase()) ||
-        data.category.toLowerCase().includes(searchValue.toLowerCase())
+        data.title.toLowerCase().includes(searchValue) ||
+        data.category.toLowerCase().includes(searchValue)
       );
     });
 
-    if (searchCategory.length > 0) {
-      // Check if filtered array has items
-      displayAssets(searchCategory);
+    if (searchResults.length > 0) {
+      displayAssets(searchResults);
     } else {
       alert("No matching results found.");
     }
 
-    inputEl.value = ""; // Reset input after search
+    inputEl.value = "";
   } else {
     alert("Please enter a search term.");
+  }
+});
+
+// Function to handle search
+function handleSearch() {
+  let searchValue = inputEl.value.trim().toLowerCase();
+
+  if (searchValue !== "") {
+    let searchResults = assetsData.filter(function (data) {
+      return (
+        data.title.toLowerCase().includes(searchValue) ||
+        data.category.toLowerCase().includes(searchValue)
+      );
+    });
+
+    if (searchResults.length > 0) {
+      displayAssets(searchResults);
+    } else {
+      alert("No matching results found.");
+    }
+
+    inputEl.value = "";
+  } else {
+    alert("Please enter a search term.");
+  }
+}
+
+// Event listener for the search button click
+btnEl.addEventListener("click", handleSearch);
+
+// Event listener for the Enter key press in the input field
+inputEl.addEventListener("keypress", function (e) {
+  if (e.key === "Enter") {
+    e.preventDefault();
+    handleSearch();
   }
 });

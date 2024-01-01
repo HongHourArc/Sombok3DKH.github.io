@@ -133,7 +133,7 @@ aside .toggle {
 }
 
 aside .toggle .logo img {
-  margin-left: 2rem;
+  margin-left: 1.5rem;
   width: 10rem;
   height: 5rem;
 }
@@ -141,6 +141,14 @@ aside .toggle .logo img {
 aside .toggle .close {
   padding-right: 1rem;
   display: none;
+}
+aside .toggle .close span {
+  transition: all 0.3s ease;
+}
+aside .toggle .close span:hover {
+  color: var(--color-primary);
+  transform: rotate(45deg);
+  transition: all 0.3s ease;
 }
 
 aside .sidebar {
@@ -214,9 +222,7 @@ aside .sidebar .message-count {
   font-size: 11px;
   border-radius: var(--border-radius-1);
 }
-
-/* SEARCH BAR */
-
+/* Headertoolbar */
 main {
   height: 100%;
 }
@@ -224,81 +230,88 @@ main {
 main .headtoolbar {
   display: flex;
   align-items: center;
-  justify-content: space-between;
   background-color: var(--color-white);
-  box-shadow: var(--box-shadow);
-  border-radius: 15px;
-  margin-top: 1rem;
+  border-radius: 0 0 15px 15px;
+  margin-top: 1.5rem;
   position: relative;
   height: 3.7rem;
   transition: all 0.3s ease;
 }
 
-main .headtoolbar:hover {
-  box-shadow: none;
-}
+/* SEARCH BAR */
 
-main .headtoolbar .search-bar {
+.search {
   display: flex;
-  background-color: var(--color-white);
-  border-radius: 15px;
-  top: 1.5rem;
-}
-
-main .headtoolbar .search-bar #h3d-search {
-  display: flex;
-  align-items: center;
-  background-color: var(--color-white);
-  border-radius: 15px;
-  transition: all 0.3s ease;
+  position: relative;
   height: 3.7rem;
-}
-
-.search-input {
-  font-family: "Poppins", sans-serif;
-  font-size: 1.1rem;
-  padding: 1rem;
-  outline: none;
-  border: none;
-  background: transparent;
-  margin-left: 2rem;
-}
-
-.search-input:hover {
-  margin-left: calc(1rem - 3px);
-  transition: linear 0.3s;
-}
-
-.search-input::placeholder {
-  color: var(--color-info-dark);
-  transition: all 0.3s ease;
-}
-
-.submit {
-  font-family: "Poppins", sans-serif;
-  padding: 0rem;
-  outline: none;
+  max-width: 3500px;
+  width: 100%;
+  background: var(--color-background);
   border-radius: 15px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.search i,
+.search button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.search i {
+  left: 20px;
+  font-size: 20px;
+  color: #707070;
+}
+
+.search input {
+  height: 100%;
+  width: 100%;
+  outline: none;
+  font-size: 18px;
+  font-weight: 400;
   border: none;
-  background-color: var(--color-info-dark);
-  height: 3.7rem;
-  width: 5rem;
+  padding: 0 155px 0 65px;
+  background-color: transparent;
 }
 
-.submit a span {
-  font-size: 1.6rem;
-  transition: all 0.5s ease;
-  align-items: center;
-  margin-top: 8px;
+.search button {
+  right: 20px;
+  font-size: 16px;
+  font-weight: 400;
+  color: #fff;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 6px;
+  background-color: var(--color-danger);
+  cursor: pointer;
+}
+.input-box .button:active {
+  transform: translateY(-50%) scale(0.98);
 }
 
-main .headtoolbar .search-bar #h3d-search a span {
-  color: var(--color-white);
+/* Responsive */
+
+@media screen and (max-width: 500px) {
+  .search {
+    height: 66px;
+    margin: 0 8px;
+  }
+  .search i {
+    left: 12px;
+    font-size: 20px;
+  }
+  .search input {
+    padding: 0 112px 0 50px;
+  }
+  .search button {
+    right: 12px;
+    font-size: 14px;
+    padding: 8px 18px;
+  }
 }
 
-main .headtoolbar .search-bar #h3d-search a:hover span {
-  margin-left: calc(1rem - 3px);
-}
+/*Closebtn */
 
 main .menu {
   display: none;
@@ -318,7 +331,9 @@ main .menu span:hover {
   transition: all 0.3s ease-in-out;
 }
 
-main .social-media a {
+/*social-media */
+
+footer .social-media a {
   display: inline-block;
   padding: 0.1rem;
   color: var(--color-danger);
@@ -327,15 +342,17 @@ main .social-media a {
   transition: all 0.3s ease-in-out;
 }
 
-main .social-media a:hover {
+footer .social-media a:hover {
   color: var(--color-primary);
   transition: all 0.3s ease-in-out;
 }
 
-main .social-media a i:hover {
+footer .social-media a i:hover {
   font-size: 1.4rem;
   transition: all 0.3s ease;
 }
+
+/* Home Page */
 
 main .h3d-homepage {
   display: block;
@@ -354,8 +371,6 @@ main .h3d-homepage .homepage-header {
   gap: 1rem;
 }
 
-/* Home Page */
-
 main .all-assets {
   display: flex;
   flex-direction: column;
@@ -364,7 +379,7 @@ main .all-assets {
 }
 
 main .h3d-homepage .assets-header {
-  margin-top: 0.5rem;
+  margin-top: 2rem;
   display: flex;
   justify-content: center;
   background-color: var(--color-white);
@@ -392,6 +407,24 @@ main .MuiGridlist-root .Card-template {
   display: flex;
   flex-direction: column;
   transition: all 0.3 ease;
+  cursor: pointer;
+}
+main .MuiGridlist-root .Card-template .card-header span {
+  position: absolute;
+  font-size: 20px;
+  align-content: center;
+  background: linear-gradient(
+    45deg,
+    #bf953f,
+    #fcf6ba,
+    #b38728,
+    #fbf5b7,
+    #aa771c
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  padding: 5px;
+  z-index: -1;
 }
 
 main .MuiGridlist-root .Card-template .card-header {
@@ -408,6 +441,7 @@ main .MuiGridlist-root .Card-template .card-header img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  z-index: -1;
 }
 
 main .MuiGridlist-root .Card-template .card-body {
@@ -763,19 +797,15 @@ main .load-more:hover span {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 30px 30px 20px 30px;
+  padding: 1rem;
   color: var(--color-dark-variant);
   background-color: var(--color-white);
-  border-radius: 15px;
   border-top: 1px solid #e5e5e5;
-  margin-top: auto;
+  margin-top: 1.5rem;
 }
 .footer_addr {
   display: grid;
-  grid-template-columns:
-    20rem
-    auto auto;
-  width: 95%;
+  grid-template-columns: repeat(3, 1fr);
   padding: 1rem;
 }
 
@@ -788,7 +818,7 @@ main .load-more:hover span {
 }
 
 .footer__logo .logo img {
-  width: 15rem;
+  width: 10rem;
 }
 
 .footer__btn {
@@ -818,7 +848,7 @@ main .load-more:hover span {
   align-items: center;
 }
 
-/* media Screen */
+/* media Screen  1200*/
 
 @media screen and (max-width: 1200px) {
   .container {
@@ -852,19 +882,20 @@ main .load-more:hover span {
     grid-template-columns: auto auto;
   }
 }
+/* media Screen  768*/
 
 @media screen and (max-width: 768px) {
   .container {
-    width: 95%;
+    margin: 0 11px 11px 11px;
+    width: 100%;
     grid-template-columns: 1fr;
-    padding: 0;
   }
 
   aside {
     position: fixed;
     background-color: var(--color-white);
     width: 15rem;
-    z-index: 3;
+    z-index: 2000;
     box-shadow: 1rem 3rem 4rem var(--color-light);
     height: 100vh;
     left: -100%;
@@ -906,11 +937,13 @@ main .load-more:hover span {
   }
 
   main .headtoolbar {
-    width: 93%;
-    position: fixed;
+    width: 100%;
     align-items: center;
-    margin: 0;
+    margin-top: 0;
     height: 5rem;
+    margin-left: 0;
+    position: fixed;
+    z-index: 1000;
   }
 
   main .headtoolbar .search-bar {
@@ -926,7 +959,7 @@ main .load-more:hover span {
   }
 
   main .h3d-homepage {
-    margin-top: 6rem;
+    margin-top: 1rem;
   }
 
   main .menu {
@@ -936,4 +969,36 @@ main .load-more:hover span {
   main .MuiGridlist-root {
     display: block;
   }
+}
+/* Back-to-top */
+
+.btn-back-top {
+  background: var(--color-danger);
+  border-radius: 15px;
+  padding: 0.75rem 1.25rem;
+  border: 0;
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  box-shadow: 0 1.5rem 2rem rgba(22, 28, 45, 0.15);
+  z-index: 9999;
+  transition: opacity ease-in 0.2s, visibility ease-in 0.1s 0.2s;
+  opacity: 0;
+  visibility: hidden;
+  cursor: pointer;
+}
+
+.btn-back-top:hover {
+  background: var(--color-primary);
+  transition: all 0.3s ease-in-out;
+}
+
+.btn-back-top span {
+  color: var(--color-white);
+}
+
+.is-scrolling .btn-back-top {
+  transition: opacity ease-in 0.2s 0.1s, visibility ease-in 0.1s;
+  opacity: 1;
+  visibility: visible;
 }
