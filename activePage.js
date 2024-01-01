@@ -37,25 +37,27 @@ document
 
 //////Load more/////--
 
-let loadMoreBtn = document.querySelector(".load-more");
 let currentItem = 6;
 
-loadMoreBtn.onclick = () => {
-  let boxes = [...document.querySelectorAll(".container .MuiGridlist-root li")];
-  loadMoreBtn.classList.add("show-loader");
+$(".load-more").on("click", function () {
+  let boxes = $(".container .MuiGridlist-root li");
+  $(".load-more").addClass("show-loader");
 
-  for (let i = currentItem; i < currentItem + 6 && i < boxes.length; i++) {
-    setTimeout(() => {
-      loadMoreBtn.classList.remove("show-loader");
-      boxes[i].style.display = "flex";
-    }, 1000);
-  }
-  currentItem += 6;
+  const displayNextItems = () => {
+    for (let i = currentItem; i < currentItem + 6 && i < boxes.length; i++) {
+      $(boxes[i]).css("display", "flex");
+    }
 
-  if (currentItem >= boxes.length) {
-    loadMoreBtn.style.display = "none";
-  }
-};
+    $(".load-more").removeClass("show-loader");
+    currentItem += 6;
+
+    if (currentItem >= boxes.length) {
+      $(".load-more").hide();
+    }
+  };
+
+  setTimeout(displayNextItems, 1000); // Display items after 1 second
+});
 
 ////// aside close menu /////--
 

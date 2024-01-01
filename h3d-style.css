@@ -285,7 +285,14 @@ main .headtoolbar {
   border-radius: 6px;
   background-color: var(--color-danger);
   cursor: pointer;
+  transition: all 0.3s ease;
 }
+
+.search button:hover {
+  background-color: var(--color-primary);
+  transition: all 0.3s ease;
+}
+
 .input-box .button:active {
   transform: translateY(-50%) scale(0.98);
 }
@@ -761,7 +768,7 @@ main .load-more:hover span {
   border: 5px solid #fdd;
   border-radius: 50%;
   animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
-  border-color: var(--color-danger) transparent transparent transparent;
+  border-color: var(--color-white) transparent transparent transparent;
 }
 .loading div:nth-child(1) {
   animation-delay: -0.45s;
@@ -783,7 +790,7 @@ main .load-more:hover span {
 
 .load-more.show-loader {
   width: 30px;
-  background-color: var(--color-dark-variant);
+  background-color: var(--color-primary);
   text-indent: -9999px;
 }
 
@@ -850,7 +857,7 @@ main .load-more:hover span {
 
 /* media Screen  1200*/
 
-@media screen and (max-width: 1200px) {
+@media screen and (min-width: 767px) and (max-width: 1023) {
   .container {
     width: 95%;
     grid-template-columns:
@@ -884,7 +891,7 @@ main .load-more:hover span {
 }
 /* media Screen  768*/
 
-@media screen and (max-width: 768px) {
+@media screen and (min-width: 767px) {
   .container {
     margin: 0 11px 11px 11px;
     width: 100%;
