@@ -1,0 +1,228 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400&family=Poppins:wght@100;200;300;400;500;600;800;900&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400&family=Noto+Sans+Khmer:wght@200;300;400;500;600;700&family=Poppins:wght@100;200;300;400;500;600;800;900&display=swap");
+
+:root {
+  font-size: 100%;
+  font-size: 16px;
+  line-height: 1.5;
+  --color-primary: #6c9bcf;
+  --color-danger: #ff0060;
+  --color-success: #1b9c85;
+  --color-warning: #f7d060;
+  --color-white: #fff;
+  --color-info-dark: #7d8da1;
+  --color-dark: #363949;
+  --color-light: rgba(132, 139, 200, 0.18);
+  --color-dark-variant: #677483;
+  --color-background: #f6f6f9;
+
+  --card-border-radius: 2rem;
+  --border-radius-1: 0.4rem;
+  --border-radius-2: 1.2rem;
+
+  --card-padding: 1.8rem;
+  --padding-1: 1.2rem;
+
+  --box-shadow: 0 2rem 3rem var(--color-light);
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+}
+
+h1 {
+  font-size: 2.25rem;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+a {
+  text-decoration: none;
+  color: var(--color-primary);
+}
+a:hover {
+  text-decoration: underline;
+}
+
+.small {
+  font-size: 80%;
+  text-align: center;
+}
+.split-screen {
+  display: flex;
+  flex-direction: column;
+}
+.left {
+  height: 200px;
+}
+
+.left,
+.signup-f {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.left {
+  background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)),
+    url("wp-content/uploads/2024/bnn-01.jpg");
+  background-size: cover;
+}
+
+.left .copy {
+  color: var(--color-white);
+  text-align: center;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.signup-f .logo img {
+  padding: 1rem;
+  width: 12rem;
+  height: auto;
+}
+
+.left p {
+  font-weight: 400;
+}
+
+.signup-f .copy {
+  color: var(--color-dark-variant);
+  text-align: center;
+}
+
+.signup-f .copy p {
+  margin: 1.5em 0;
+  font-size: 0.875rem;
+}
+
+.signup-f form {
+  width: 328px;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="password"] {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  border-radius: 8px;
+  border: 1px solid #c4c4c4;
+  padding: 1em;
+  margin-bottom: 1.25rem;
+  font-size: 0.875rem;
+}
+
+.error {
+  font-size: 0.75rem;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 0.75rem;
+}
+
+.input-container.password {
+  position: relative;
+}
+.input-container.password i {
+  position: absolute;
+  top: 42px;
+  right: 16px;
+  cursor: pointer;
+}
+
+.checkbox-container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.checkbox-container {
+  display: block;
+  position: relative;
+  padding-left: 2rem;
+  cursor: pointer;
+  user-select: none;
+  margin: 0 0 1.25rem 0;
+}
+
+.checkbox-container input:checked ~ .checkmark {
+  background-color: var(--color-dark-variant);
+  border: 1px solid var(--color-dark);
+}
+
+.checkmark {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  background: var(--color-white);
+  border: 1px solid #c4c4c4;
+  border-radius: 2px;
+  top: -4px;
+  left: 0;
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.checkbox-container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.checkbox-container .checkmark:after {
+  border: solid var(--color-white);
+  border-width: 0 3px 3px 0;
+  width: 5px;
+  height: 10px;
+  left: 8px;
+  top: 4px;
+  transform: rotate(45deg);
+}
+
+.signup-btn {
+  display: block;
+  width: 100%;
+  background: var(--color-primary);
+  color: var(--color-white);
+  font-weight: 700;
+  border: none;
+  padding: 1rem;
+  border-radius: 8px;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.signup-btn:hover {
+  background: var(--color-dark-variant);
+  cursor: pointer;
+}
+
+@media screen and (min-width: 900px) {
+  .split-screen {
+    flex-direction: row;
+    height: 100vh;
+  }
+  .left,
+  .signup-f {
+    display: flex;
+    width: 50%;
+    height: auto;
+  }
+}
