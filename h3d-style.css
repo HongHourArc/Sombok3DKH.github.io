@@ -133,9 +133,10 @@ aside .toggle {
 }
 
 aside .toggle .logo img {
+  padding: 0.5rem;
   margin-left: 1.5rem;
   width: 10rem;
-  height: 5rem;
+  height: auto;
 }
 
 aside .toggle .close {
