@@ -246,14 +246,14 @@ function displayAssets(assets) {
     .map((asset) => {
       return `<li class="Card-template"> 
             <div class="card-header">
-                <img src="${asset.img}" alt="">
+              <a href="/H3D-Post Container.html"><img src="${asset.img}" alt="">
                 <span class="material-icons-sharp">
                                 ${asset.icons}
-                            </span>
+                            </span></a>
             </div>
             <div class="card-body">
                 <div class="card-content">
-                    <h2>${asset.title}</h2>
+                    <a href="/H3D-Post Container.html"><h2>${asset.title}</h2></a>
                     <div class="card-size">
                         <p>Size: ${asset.size}</p>
                     </div>

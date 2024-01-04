@@ -1,0 +1,284 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400&family=Poppins:wght@100;200;300;400;500;600;800;900&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400&family=Noto+Sans+Khmer:wght@200;300;400;500;600;700&family=Poppins:wght@100;200;300;400;500;600;800;900&display=swap");
+
+:root {
+  --color-primary: #6c9bcf;
+  --color-danger: #ff0060;
+  --color-success: #1b9c85;
+  --color-warning: #f7d060;
+  --color-white: #fff;
+  --color-info-dark: #7d8da1;
+  --color-dark: #363949;
+  --color-light: rgba(132, 139, 200, 0.18);
+  --color-dark-variant: #677483;
+  --color-background: #f6f6f9;
+
+  --card-border-radius: 2rem;
+  --border-radius-1: 0.4rem;
+  --border-radius-2: 1.2rem;
+
+  --card-padding: 1.8rem;
+  --padding-1: 1.2rem;
+
+  --box-shadow: 0 2rem 3rem var(--color-light);
+}
+
+.dark-mode-variables {
+  --color-background: #181a1e;
+  --color-white: #202528;
+  --color-dark: #edeffd;
+  --color-dark-variant: #a3bdcc;
+  --color-light: rgba(0, 0, 0, 0.4);
+  --box-shadow: 0 2rem 3rem var(--color-light);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  appearance: 0;
+}
+
+html {
+  font-size: 14px;
+}
+
+/* POST-CONTAINER */
+
+main .post-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+main .post-container .post-header {
+  padding: 1rem 2rem;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-white);
+  border-radius: 15px;
+  box-shadow: var(--box-shadow);
+  gap: 1rem;
+}
+
+main .post-container .post-header #post-header-list {
+  display: flex;
+}
+
+main .rating {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+main .rating .best-selling {
+  display: flex;
+  gap: 1rem;
+}
+
+main .best-price {
+  display: flex;
+  flex-direction: column;
+  margin-top: 4rem;
+}
+
+main .best-price .best-buy {
+  display: flex;
+  margin-top: 1rem;
+  height: 3rem;
+}
+
+main .best-price .best-buy {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+main .best-price .best-buy .best-addcart {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+main .best-price .best-buy .best-addcart .btn-addcart {
+  background-color: var(--color-danger);
+  color: var(--color-white);
+  border-width: 0;
+  width: 100%;
+  cursor: pointer;
+  border-radius: 50px;
+}
+
+main .best-price .best-buy .best-addfav .btn-addfav {
+  cursor: pointer;
+  color: var(--color-danger);
+  right: 0;
+  width: 50px;
+  height: 100%;
+  background-color: transparent;
+  border-width: 2px;
+  border-color: var(--color-danger);
+  margin-left: 1rem;
+  border-radius: 50px;
+}
+
+main .best-price .best-buy .best-addfav .btn-addfav {
+  justify-items: center;
+}
+
+/* post-main */
+
+main .post-main {
+  padding: 2rem;
+}
+
+main .post-main .main-h1 {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+main .post-main .main-h1 .post-h1 {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  border-radius: 15px;
+  outline: 2px solid;
+  outline-color: var(--color-info-dark);
+  gap: 1rem;
+}
+main .post-main .main-h1 .post-h1 .h1-01 {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+main .post-main .main-h1 .post-h2 .Course-content {
+  display: flex;
+  justify-content: space-between;
+}
+
+main .post-main .main-h1 .post-h2 .Course-content-1 ul {
+  padding: 1rem;
+  display: flex;
+  gap: 2rem;
+}
+main .post-main .main-h1 .post-h2 .Course-content p {
+  cursor: pointer;
+}
+
+main .post-main .main-h1 .post-h4 {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+main .h3d-homepage .HGridlist-root {
+  display: flex;
+  flex-direction: column;
+}
+
+main .h3d-homepage .HGridlist-root .Card-template {
+  display: flex;
+  flex-direction: row;
+  padding: 1rem 0 1rem 0;
+  border-bottom: 1.5px solid;
+  border-color: var(--color-dark-variant);
+  justify-content: space-between;
+  transition: all 0.3 ease;
+}
+
+main .h3d-homepage .HGridlist-root .Card-template .card-header {
+  display: flex;
+  gap: 0.5rem;
+}
+
+main .h3d-homepage .HGridlist-root .Card-template img {
+  width: 150px;
+}
+
+main
+  .h3d-homepage
+  .HGridlist-root
+  .Card-template
+  .card-body
+  .card-footer
+  .card-download {
+  display: none;
+}
+
+main .h3d-homepage .HGridlist-root .Card-template:hover {
+  box-shadow: var(--box-shadow);
+  border-color: var(--color-primary);
+  border-radius: 0px;
+  transition: all 0.3 ease;
+}
+
+main .h3d-homepage .HGridlist-root .Card-template .best-infor-hide {
+  display: flex;
+  margin-left: 0;
+  margin-top: 0.5rem;
+  gap: 2rem;
+}
+
+main .h3d-homepage .HGridlist-root .Card-template .best-price {
+  margin-top: 0;
+}
+
+main .h3d-homepage .HGridlist-root li:nth-child(3) ~ li {
+  display: none;
+}
+
+main .h3d-homepage .Bought-together {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  margin-top: 2rem;
+  gap: 1rem;
+}
+
+main .h3d-homepage .Bought-together-h1 {
+  display: flex;
+  padding: 3rem;
+  gap: 1rem;
+  align-items: center;
+  text-decoration: none;
+}
+
+main .h3d-homepage .Bought-together .Bought-together-h1 {
+  list-style-type: none;
+}
+
+main .h3d-homepage .Bought-together-h1 .bou-plus {
+  display: flex;
+  font-size: 2rem;
+  color: var(--color-danger);
+}
+
+main .h3d-homepage .bou-price {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding: 1rem 0 1rem 0;
+  gap: 1rem;
+  transition: all 0.3 ease;
+}
+
+main .h3d-homepage .bou-price .bou-buynow {
+  width: 100%;
+  height: 40px;
+  border-radius: 20px;
+  border: none;
+  background-color: var(--color-danger);
+  cursor: pointer;
+  transition: all 0.3 ease;
+}
+main .h3d-homepage .bou-price .bou-buynow p {
+  color: var(--color-white);
+}
+
+main .h3d-homepage .bou-price .bou-buynow:hover {
+  background-color: var(--color-primary);
+  transition: all 0.3 ease;
+}

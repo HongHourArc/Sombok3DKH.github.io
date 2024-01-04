@@ -32,6 +32,7 @@ body {
   margin: 0;
   font-family: "Montserrat", sans-serif;
   font-weight: 500;
+  background-color: var(--color-background);
 }
 
 h1 {
@@ -65,7 +66,7 @@ a:hover {
 }
 
 .left,
-.signup-f {
+.Forms {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -85,9 +86,18 @@ a:hover {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.signup-f .logo img {
-  padding: 1rem;
-  width: 12rem;
+.Forms {
+  background-color: var(--color-background);
+}
+.Forms .logo {
+  margin-top: 2rem;
+  position: relative;
+  width: 11rem;
+  height: 1rem;
+}
+.Forms .logo img {
+  position: relative;
+  width: 11rem;
   height: auto;
 }
 
@@ -95,17 +105,28 @@ a:hover {
   font-weight: 400;
 }
 
-.signup-f .copy {
+.Forms .copy {
   color: var(--color-dark-variant);
   text-align: center;
 }
 
-.signup-f .copy p {
+.Forms .copy p {
   margin: 1.5em 0;
   font-size: 0.875rem;
 }
+.signup-form {
+  display: none;
+}
 
-.signup-f form {
+.login-form.show {
+  display: none;
+}
+
+.signup-form.hide {
+  display: block;
+}
+
+.Forms form {
   width: 328px;
 }
 
@@ -160,8 +181,8 @@ label {
 }
 
 .checkbox-container input:checked ~ .checkmark {
-  background-color: var(--color-dark-variant);
-  border: 1px solid var(--color-dark);
+  background-color: var(--color-danger);
+  border: 1px solid var(--color-white);
 }
 
 .checkmark {
@@ -195,10 +216,11 @@ label {
   transform: rotate(45deg);
 }
 
-.signup-btn {
+.signup-btn,
+.login-btn {
   display: block;
   width: 100%;
-  background: var(--color-primary);
+  background: var(--color-danger);
   color: var(--color-white);
   font-weight: 700;
   border: none;
@@ -207,11 +229,14 @@ label {
   font-size: 0.75rem;
   text-transform: uppercase;
   letter-spacing: 0.5px;
+  transition: 0.5s ease;
 }
 
-.signup-btn:hover {
-  background: var(--color-dark-variant);
+.signup-btn:hover,
+.login-btn:hover {
+  background: var(--color-primary);
   cursor: pointer;
+  transition: 0.5s ease;
 }
 
 @media screen and (min-width: 900px) {
@@ -220,7 +245,7 @@ label {
     height: 100vh;
   }
   .left,
-  .signup-f {
+  .Forms {
     display: flex;
     width: 50%;
     height: auto;

@@ -120,16 +120,27 @@ window.addEventListener("resize", displaySideMenu);
   window.addEventListener("scroll", handleScroll);
 })();
 
-////// signup /////--
+////// Show Post-Contain /////--
 
-const container = document.getElementById("container");
-const registerBtn = document.getElementById("register");
-const loginBtn = document.getElementById("login");
+const sidebarLinks = document.querySelectorAll(".sidebarLink");
+const postcontLink = document.querySelector(".post-cont");
+const asideitemLink = document.querySelector(".aside-items");
 
-registerBtn.addEventListener("click", () => {
-  container.classList.add("active");
-});
+// Define a function to handle the click event
+function handleClick(e) {
+  e.preventDefault(); // Preventing default link behavior
 
-loginBtn.addEventListener("click", () => {
-  container.classList.remove("active");
+  // Toggle the classes to show/hide elements
+  postcontLink.classList.toggle("hide");
+  asideitemLink.classList.toggle("show");
+
+  // Remove the click event listener after it's been triggered once
+  sidebarLinks.forEach((link) => {
+    link.removeEventListener("click", handleClick);
+  });
+}
+
+// Iterate through each sidebar link and add event listener
+sidebarLinks.forEach((link) => {
+  link.addEventListener("click", handleClick);
 });

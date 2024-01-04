@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="Login-style.css">
     <script src="https://kit.fontawesome.com/7ff1eae6e7.js" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
 <body>
 <!-- Main body -->
  <div class="split-screen">
@@ -18,7 +18,7 @@
             <p> Over 1000 courses taught by real creatives</p>
         </section>
     </div>
-    <div class="signup-f">
+    <div class="Forms">
         <div class="logo">
             <a href="index.html"> <img src="wp-content/themes/Logo/SVG-LOGO Sombok.svg"> 
             </a>
@@ -29,15 +29,15 @@
                 <h2>Sign In</h2>
             </section>
             <div class="input-container email">
-                <label for="email">Email</label>
-                <input id="email" name="email" type="email" required>
+                <label for="login-email">Email</label>
+                <input class="email-input" id="login-email" name="email" type="email" required>
                 <!-- Additional hint for required field: <span class="hint">Required</span> -->
             </div>
         
             <div class="input-container password">
                 <label for="password">Password (at least 6 characters)</label>
                 <input id="password" name="password" type="password" minlength="6" required>
-                <i class="far fa-eye-slash"></i>
+                <i class='bx bx-hide eye-icon'></i>
                 <!-- Additional hint for required field: <span class="hint">Required</span> -->
             </div>
         
@@ -51,13 +51,21 @@
 
             <section class="copy">
                 <div class="login-container">
-                    <p>Don't have an account yet? <a href="#"><br><strong>Create an account!</strong></a></p>
+                    <p>Don't have an account yet? <a href="#" class="link-login"><br><strong>Create an account!</strong></a></p>
                 </div>
             </section>
         
-        
-            <button class="signup-btn" type="submit">Sign In</button>
+            <button class="login-btn" type="submit">Log In</button>
 
+            <div class="line">
+                <div><br></div>
+                <div class="media-options">
+                    <a href="#" class="field google">
+                        <img src="#" alt="" class="google-img">
+                        <span>Login with Google</span>
+                    </a>
+                </div>
+            </div>
         </form>
         <form action="#" class="signup-form">
             <section class="copy">
@@ -71,21 +79,21 @@
             </div>
         
             <div class="input-container email">
-                <label for="email">Email</label>
-                <input id="email" name="email" type="email" required>
+                <label for="signup-email">Email</label>
+                <input class="email-input" id="signup-email" name="email" type="email" required>
                 <!-- Additional hint for required field: <span class="hint">Required</span> -->
             </div>
         
             <div class="input-container password">
                 <label for="password">Password (at least 6 characters)</label>
-                <input id="password" name="password" type="password" minlength="6" required>
-                <i class="far fa-eye-slash"></i>
+                <input id="signup-password" name="password" type="password" minlength="6" required>
+                <i class='bx bx-hide eye-icon'></i>
                 <!-- Additional hint for required field: <span class="hint">Required</span> -->
             </div>
         
             <section class="copy">
                 <div class="login-container">
-                    <p>Already have an account? <a href="#"><strong>Log In</strong></a></p>
+                    <p>Already have an account? <a href="#" class="link-signup"><strong>Log In</strong></a></p>
                 </div>
             </section>
         
@@ -96,11 +104,8 @@
                     <a href="#">Privacy Policy</a> &amp; <a href="#"> Terms of Service</a>.</span></p>
             </section>
         </form>
-        
     </div>
  </div>
-
-
  <script src="LoginJava.js"></script>
 </body>
 
